@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>Bouncing Ball</h1>
+    </center>
+    <div id="ball" style="
+        background-color:greenyellow;
+        top:0px;
+        left:0px;
+        border-radius:50%;
+        position:absolute;
+        z-index:3;
+        width:100px;
+        height:100px;">
+    </div>
+    <script>
+        var velocity = 40;
+        var position = 0;
+        var ball = document.getElementById("ball");
+        var end = 400;
+        let position_1 = 0;
+        let direction = 1;
+
+        function move() {
+            position = position + velocity * direction;
+            if (position > end) {
+                direction = -1;
+            } else if (position <= position_1) {
+                direction = 1;
+            }
+            ball.style.left = position + 'px'
+            ball.style.top = position + 'px'
+        }
+        setInterval(move, 100);
+    </script>
+</body>
+
+</html>
